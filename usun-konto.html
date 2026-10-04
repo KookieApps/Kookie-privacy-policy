@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usunięcie konta — Kookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F2EC;
+      --ink: #1A1814;
+      --ink-light: #8A847C;
+      --ink-faint: #ADA8A0;
+      --teal: #2D7A4F;
+      --teal-light: #E8F5EE;
+      --rule: #EBE5DC;
+      --max: 680px;
+    }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 56px 24px 48px;
+      max-width: var(--max);
+      margin: 0 auto;
+      animation: fade-up 0.6s ease both;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .lang-switch:hover { text-decoration: underline; }
+
+    .wordmark-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .wordmark-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .wordmark-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--ink-faint);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 96px;
+      animation: fade-up 0.6s 0.1s ease both;
+    }
+
+    /* ── Intro box ── */
+    .intro-box {
+      background: var(--teal-light);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 56px;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .intro-box strong {
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: var(--ink);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .section-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      min-width: 24px;
+    }
+
+    h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      letter-spacing: 0.1px;
+    }
+
+    p {
+      color: var(--ink-light);
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      margin: 10px 0 14px;
+    }
+
+    ul li {
+      color: var(--ink-light);
+      font-size: 16px;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.5;
+    }
+
+    /* ── Processor cards ── */
+    .processor {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .processor-name {
+      font-weight: 500;
+      color: var(--ink);
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .processor-name::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .processor p {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .processor a {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .processor a:hover { text-decoration: underline; }
+
+    .guarantee {
+      background: var(--teal-light);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--ink);
+      margin-top: 10px;
+    }
+
+    .guarantee strong { color: var(--teal); font-weight: 500; }
+
+    /* ── Table ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 8px;
+      border: 1px solid var(--rule);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: #EDE7DF;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    /* ── Rights grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .right-item {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+
+    .right-item strong {
+      display: block;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .right-item span {
+      color: var(--ink-faint);
+      font-size: 13px;
+    }
+
+    /* ── No-collect grid ── */
+    .no-collect {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tag {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--ink-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag::before {
+      content: '×';
+      color: #ccc;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .contact-box a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid var(--rule);
+      padding-top: 24px;
+    }
+
+    /* ── Animation ── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      html { font-size: 16px; }
+      .rights-grid { grid-template-columns: 1fr 1fr; }
+    }
+  
+    /* ── Form ── */
+    .form-box {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 18px 0 6px;
+    }
+    label:first-child { margin-top: 0; }
+    .hint { font-size: 13px; color: var(--ink-faint); margin: 4px 0 0; }
+    input[type=email], textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    textarea { min-height: 96px; resize: vertical; }
+    input:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+    .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 300; color: var(--ink-light); font-size: 15px; margin-top: 18px; }
+    .check input { margin-top: 6px; accent-color: var(--teal); }
+    button {
+      margin-top: 22px;
+      width: 100%;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--teal);
+      border: none;
+      border-radius: 10px;
+      padding: 13px 16px;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.08); }
+    .error { color: #B3402F; font-size: 14px; margin-top: 10px; display: none; }
+    .after { display: none; margin-top: 16px; }
+    .back { color: var(--teal); text-decoration: none; font-weight: 500; font-size: 14px; }
+    .back:hover { text-decoration: underline; }
+    ol { margin: 10px 0 14px 20px; color: var(--ink-light); }
+    ol li { padding: 4px 0; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="wordmark">
+      <div class="wordmark-icon">🍽️</div>
+      <span class="wordmark-text">Kookie</span>
+    </div>
+    <a class="lang-switch" href="index.html">Polityka prywatności</a>
+  </div>
+
+  <h1>Usunięcie<br><em>konta</em></h1>
+  <p class="meta">Aplikacja Kookie · deweloper: Łukasz Chochel</p>
+</header>
+
+<main>
+
+  <div class="intro-box">
+    <strong>Najszybciej:</strong> w aplikacji Kookie otwórz Ustawienia i w sekcji Konto wybierz „Usuń konto”. Konto zostanie usunięte od razu. Ta strona jest dla osób, które nie mają już dostępu do aplikacji.
+  </div>
+
+  <section>
+    <h2><span class="section-num">01</span> Prośba o usunięcie konta</h2>
+    <p>Wypełnij formularz i wyślij wiadomość, którą przygotuje Twoja aplikacja pocztowa. Wyślij ją najlepiej z adresu e-mail przypisanego do konta Kookie — pozwoli nam to potwierdzić, że konto należy do Ciebie.</p>
+
+    <form class="form-box" id="delete-form" novalidate>
+      <label for="email">Adres e-mail konta Kookie</label>
+      <input type="email" id="email" name="email" autocomplete="email" required placeholder="np. jan@example.com" />
+      <p class="hint">Jeśli logujesz się przez Apple z ukrytym adresem (…@privaterelay.appleid.com), podaj go, jeśli go znasz — a jeśli nie, napisz w uwagach, kiedy konto zostało założone.</p>
+
+      <label for="note">Uwagi (opcjonalnie)</label>
+      <textarea id="note" name="note" placeholder="np. nie mam już telefonu, na którym było konto"></textarea>
+
+      <label class="check"><input type="checkbox" id="confirm" required /> <span>Rozumiem, że usunięcie konta jest nieodwracalne, a dane zapisane w chmurze zostaną skasowane.</span></label>
+
+      <button type="submit">Przygotuj wiadomość</button>
+      <p class="error" id="error"></p>
+    </form>
+
+    <div class="after" id="after">
+      <p>Jeśli aplikacja pocztowa się nie otworzyła, wyślij wiadomość samodzielnie na adres <a class="back" href="mailto:hello.kookielabs@gmail.com">hello.kookielabs@gmail.com</a> z tematem „Prośba o usunięcie konta Kookie” i adresem e-mail konta w treści.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="section-num">02</span> Co dzieje się dalej</h2>
+    <ol>
+      <li>Potwierdzimy otrzymanie prośby odpowiedzią na Twój e-mail.</li>
+      <li>Jeśli wiadomość nie przyszła z adresu konta, możemy poprosić o dodatkowe potwierdzenie, że konto należy do Ciebie.</li>
+      <li>Usuniemy konto w ciągu 30 dni od potwierdzenia i damy znać, gdy będzie gotowe.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="section-num">03</span> Jakie dane usuwamy</h2>
+    <ul>
+      <li>konto: adres e-mail, identyfikator od dostawcy logowania (Google lub Apple) i nazwę wyświetlaną</li>
+      <li>kopię danych w chmurze: przepisy, składniki, plan posiłków, listę zakupów, ustawienia, prywatne notatki i oceny</li>
+      <li>członkostwo w rodzinie i powiązanie logowania przez Apple</li>
+    </ul>
+    <p>Jeśli jesteś właścicielem rodziny, w której są inni członkowie, skontaktujemy się z Tobą przed usunięciem — wspólne dane rodziny należą też do pozostałych osób i nie skasujemy ich bez uzgodnienia.</p>
+
+    <h3>Czego ta prośba nie obejmuje</h3>
+    <ul>
+      <li>danych zapisanych lokalnie na Twoim telefonie — znikną po usunięciu aplikacji</li>
+      <li>anonimowych danych analitycznych, które nie są powiązane z kontem ani adresem e-mail</li>
+    </ul>
+    <p>Więcej o przetwarzaniu danych: <a class="back" href="index.html">Polityka prywatności Kookie →</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Kookie — Łukasz Chochel</span>
+  <span><a class="back" href="mailto:hello.kookielabs@gmail.com">hello.kookielabs@gmail.com</a></span>
+</footer>
+
+<script>
+  document.getElementById('delete-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var note = document.getElementById('note').value.trim();
+    var confirmed = document.getElementById('confirm').checked;
+    var error = document.getElementById('error');
+    error.style.display = 'none';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      error.textContent = 'Podaj poprawny adres e-mail konta.';
+      error.style.display = 'block';
+      return;
+    }
+    if (!confirmed) {
+      error.textContent = 'Zaznacz potwierdzenie, aby kontynuować.';
+      error.style.display = 'block';
+      return;
+    }
+    var body = 'Dzień dobry,\n\nproszę o usunięcie mojego konta w aplikacji Kookie wraz z danymi zapisanymi w chmurze.\n\nAdres e-mail konta: ' + email +
+      (note ? '\n\nUwagi: ' + note : '') +
+      '\n\nRozumiem, że usunięcie konta jest nieodwracalne.';
+    window.location.href = 'mailto:hello.kookielabs@gmail.com' +
+      '?subject=' + encodeURIComponent('Prośba o usunięcie konta Kookie') +
+      '&body=' + encodeURIComponent(body);
+    document.getElementById('after').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
