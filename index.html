@@ -401,7 +401,7 @@
   </div>
 
   <h1>Polityka<br><em>prywatności</em></h1>
-  <p class="meta">Obowiązuje od 23 września 2026</p>
+  <p class="meta">Obowiązuje od 7 października 2026</p>
 </header>
 
 <main>
@@ -437,7 +437,7 @@
   <section>
     <h2><span class="section-num">03</span> Konto, chmura i rodzina</h2>
     <p>Konto jest opcjonalne. Po zalogowaniu przez Google (iOS lub Android) albo Apple (tylko iOS) Kookie zapisuje w Supabase Twój adres e-mail, identyfikator konta od dostawcy logowania oraz — jeśli dostawca go udostępni — nazwę wyświetlaną.</p>
-    <p>Do chmury trafia kopia danych potrzebna do działania konta: przepisy, składniki, plan posiłków, lista zakupów i jej stan, ustawienia związane z planowaniem oraz prywatne notatki i oceny. Losowy identyfikator instalacji służy wyłącznie do bezpiecznego uzgadniania zmian między urządzeniami, nie do reklam ani śledzenia poza Kookie.</p>
+    <p>Do chmury trafia kopia danych potrzebna do działania konta: przepisy, składniki, plan posiłków, lista zakupów i jej stan, ustawienia związane z planowaniem oraz prywatne notatki i oceny. Losowy identyfikator instalacji służy do bezpiecznego uzgadniania zmian między urządzeniami oraz do liczenia limitu importów (sekcja 04), nie do reklam ani śledzenia poza Kookie. Jest zapisany w kopii danych w chmurze, więc w rodzinie widzą go także pozostali członkowie.</p>
     <p>Jeśli dołączysz do rodziny, jej członkowie widzą i wspólnie zmieniają dane rodziny, takie jak przepisy, plan i lista zakupów. Każdy członek zachowuje własne konto i prywatne dane.</p>
 
     <h3>Gdzie dane są przechowywane</h3>
@@ -461,7 +461,7 @@
       <li>adres URL podany przez użytkownika</li>
       <li>treść strony internetowej pod tym adresem (tekst przepisu)</li>
     </ul>
-    <p>Aplikacja nie przesyła żadnych danych osobowych: imienia, nazwiska, e-maila, lokalizacji ani identyfikatorów urządzenia.</p>
+    <p>Aplikacja nie przesyła imienia, nazwiska, e-maila ani lokalizacji. Razem z adresem URL wysyła losowy identyfikator instalacji Kookie — opis i cel niżej, w części „Limit importów”.</p>
 
     <h3>Jak przebiega przetwarzanie</h3>
     <ul>
@@ -489,8 +489,11 @@
       <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Polityka prywatności Anthropic →</a>
     </div>
 
-    <h3>Limit importów</h3>
-    <p>Aplikacja śledzi lokalnie liczbę importów z URL w celu egzekwowania limitu bezpłatnych importów. Licznik przechowywany jest wyłącznie na urządzeniu użytkownika.</p>
+    <h3>Limit importów i ochrona przed nadużyciami</h3>
+    <p>Liczba bezpłatnych importów jest ograniczona. Żeby ten limit działał i żeby nikt nie wykorzystywał usługi masowo, przy każdym imporcie aplikacja wysyła losowy identyfikator instalacji Kookie. To identyfikator nadany przez aplikację — nie numer telefonu, nie identyfikator reklamowy i nie identyfikator sprzętu.</p>
+    <p>Serwer nie zapisuje samego identyfikatora, tylko jego jednokierunkowy skrót, z którego nie da się odtworzyć identyfikatora. Przy każdym imporcie zapisywany jest wpis: skrót identyfikatora, rodzaj importu, liczba przepisów, wersja aplikacji i czas. Adres URL ani treść przepisu nie trafiają do tego wpisu.</p>
+    <p>Wpisy są przechowywane bezterminowo, bo na nich opiera się licznik limitu. Jeśli jesteś zalogowany, wpis jest dodatkowo przypisany do Twojego konta. Po usunięciu konta wpisy zostają, ale tracą powiązanie z kontem.</p>
+    <p>Identyfikator instalacji jest też częścią kopii danych w chmurze (sekcja 03), dlatego w rodzinie widzą go pozostali członkowie.</p>
   </section>
 
   <!-- 5 -->
@@ -570,6 +573,10 @@
             <td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) — funkcja inicjowana świadomie przez użytkownika</td>
           </tr>
           <tr>
+            <td>Skrót identyfikatora instalacji przy imporcie — limit bezpłatnych importów i ochrona przed nadużyciami</td>
+            <td>Prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO) — ochrona usługi przed nadużyciem i egzekwowanie limitu</td>
+          </tr>
+          <tr>
             <td>Obsługa konta, kopii w chmurze i rodziny</td>
             <td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) — funkcja uruchamiana po założeniu konta</td>
           </tr>
@@ -643,7 +650,7 @@
 
 <footer>
   <span>© 2026 Kookie — Łukasz Chochel</span>
-  <span>Obowiązuje od 23 września 2026</span>
+  <span>Obowiązuje od 7 października 2026</span>
 </footer>
 
 </body>
