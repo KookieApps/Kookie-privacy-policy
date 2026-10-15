@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regulamin — Kookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F2EC;
+      --ink: #1A1814;
+      --ink-light: #8A847C;
+      --ink-faint: #ADA8A0;
+      --teal: #2D7A4F;
+      --teal-light: #E8F5EE;
+      --rule: #EBE5DC;
+      --max: 680px;
+    }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 56px 24px 48px;
+      max-width: var(--max);
+      margin: 0 auto;
+      animation: fade-up 0.6s ease both;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .lang-switch:hover { text-decoration: underline; }
+
+    .wordmark-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .wordmark-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .wordmark-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--ink-faint);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 96px;
+      animation: fade-up 0.6s 0.1s ease both;
+    }
+
+    /* ── Intro box ── */
+    .intro-box {
+      background: var(--teal-light);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 56px;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .intro-box strong {
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: var(--ink);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .section-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      min-width: 24px;
+    }
+
+    h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      letter-spacing: 0.1px;
+    }
+
+    p {
+      color: var(--ink-light);
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      margin: 10px 0 14px;
+    }
+
+    ul li {
+      color: var(--ink-light);
+      font-size: 16px;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.5;
+    }
+
+    /* ── Processor cards ── */
+    .processor {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .processor-name {
+      font-weight: 500;
+      color: var(--ink);
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .processor-name::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .processor p {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .processor a {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .processor a:hover { text-decoration: underline; }
+
+    .guarantee {
+      background: var(--teal-light);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--ink);
+      margin-top: 10px;
+    }
+
+    .guarantee strong { color: var(--teal); font-weight: 500; }
+
+    /* ── Table ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 8px;
+      border: 1px solid var(--rule);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: #EDE7DF;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    /* ── Rights grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .right-item {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+
+    .right-item strong {
+      display: block;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .right-item span {
+      color: var(--ink-faint);
+      font-size: 13px;
+    }
+
+    /* ── No-collect grid ── */
+    .no-collect {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tag {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--ink-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag::before {
+      content: '×';
+      color: #ccc;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .contact-box a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid var(--rule);
+      padding-top: 24px;
+    }
+
+    /* ── Animation ── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      html { font-size: 16px; }
+      .rights-grid { grid-template-columns: 1fr 1fr; }
+    }
+  
+    /* ── Form ── */
+    .form-box {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 18px 0 6px;
+    }
+    label:first-child { margin-top: 0; }
+    .hint { font-size: 13px; color: var(--ink-faint); margin: 4px 0 0; }
+    input[type=email], textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    textarea { min-height: 96px; resize: vertical; }
+    input:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+    .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 300; color: var(--ink-light); font-size: 15px; margin-top: 18px; }
+    .check input { margin-top: 6px; accent-color: var(--teal); }
+    button {
+      margin-top: 22px;
+      width: 100%;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background: var(--teal);
+      border: none;
+      border-radius: 10px;
+      padding: 13px 16px;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.08); }
+    .error { color: #B3402F; font-size: 14px; margin-top: 10px; display: none; }
+    .after { display: none; margin-top: 16px; }
+    .back { color: var(--teal); text-decoration: none; font-weight: 500; font-size: 14px; }
+    .back:hover { text-decoration: underline; }
+    ol { margin: 10px 0 14px 20px; color: var(--ink-light); }
+    ol li { padding: 4px 0; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="wordmark">
+      <div class="wordmark-icon">🍽️</div>
+      <span class="wordmark-text">Kookie</span>
+    </div>
+    <a class="lang-switch" href="index.html">Polityka prywatności</a>
+  </div>
+
+  <h1>Regulamin<br><em>Kookie</em></h1>
+  <p class="meta">Aplikacja Kookie · deweloper: Łukasz Chochel · wersja z 15 października 2026</p>
+</header>
+
+<main>
+
+  <div class="intro-box">
+    <strong>W skrócie:</strong> Kookie działa bez konta i bez opłat. Płatne są tylko pakiety importów i subskrypcja Kookie+. Kupujesz je w App Store albo Google Play, a subskrypcję anulujesz w ustawieniach sklepu. Gdy subskrypcja wygaśnie, Twoje przepisy, plan i lista zakupów zostają.
+  </div>
+
+  <section>
+    <h2><span class="section-num">01</span> Postanowienia ogólne</h2>
+    <p>Regulamin określa zasady korzystania z aplikacji Kookie na iOS i Androida — planera posiłków z biblioteką przepisów i listą zakupów. Usługodawcą jest Łukasz Chochel, deweloper aplikacji Kookie (kontakt: <a class="back" href="mailto:hello.kookielabs@gmail.com">hello.kookielabs@gmail.com</a>).</p>
+    <p>Korzystając z aplikacji, akceptujesz ten regulamin. Zasady przetwarzania danych opisuje osobno <a class="back" href="index.html">Polityka prywatności</a>.</p>
+    <p>Aplikację pobierasz z App Store albo Google Play. Obowiązują przy tym także warunki tych sklepów. W App Store jest to standardowa umowa licencyjna Apple (<a class="back" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement</a>), chyba że ten regulamin przyznaje Ci więcej praw.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">02</span> Konto</h2>
+    <p>Konto jest opcjonalne. Bez konta aplikacja działa w pełni na Twoim telefonie. Konto (logowanie przez Google albo Apple) daje kopię danych w chmurze, synchronizację między urządzeniami i wspólny plan z rodziną.</p>
+    <p>Konto możesz w każdej chwili usunąć w aplikacji (Ustawienia → Konto → „Usuń konto”) albo przez <a class="back" href="usun-konto.html">formularz prośby o usunięcie konta</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">03</span> Funkcje bezpłatne</h2>
+    <p>Bezpłatnie i bez limitu czasu możesz planować posiłki, prowadzić bibliotekę przepisów, dodawać przepisy ręcznie i korzystać z listy zakupów. Każda instalacja dostaje też pulę darmowych importów przepisów (z linku, zdjęcia albo pliku PDF). Aktualną liczbę pozostałych importów pokazuje aplikacja.</p>
+    <p>Osoby, które założyły konto przed datą ogłoszoną w aplikacji, mogą na stałe zachować wybrane funkcje bez opłat — zakres takiej oferty pokazuje aplikacja w chwili jej ogłoszenia.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">04</span> Pakiety importów</h2>
+    <ul>
+      <li>Pakiet to jednorazowy zakup określonej liczby importów przepisów (np. 5 albo 15). Cena jest widoczna w aplikacji przed zakupem.</li>
+      <li>Kupione importy nie wygasają. Zużywasz je dopiero po wyczerpaniu darmowej puli.</li>
+      <li>Jeden import oznacza jeden zaimportowany przepis — także wtedy, gdy z jednego pliku PDF importujesz kilka przepisów, każdy liczy się osobno.</li>
+      <li>Import, który się nie powiódł z przyczyn technicznych po naszej stronie, nie zużywa importu.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="section-num">05</span> Subskrypcja Kookie+</h2>
+    <p>Kookie+ odblokowuje: import przepisów z linku, zdjęć i plików PDF, kopiowanie dnia i tygodnia planu oraz losowanie tygodnia. Aktualny zakres opisuje ekran oferty w aplikacji.</p>
+    <ul>
+      <li><strong style="color:var(--ink);font-weight:500">Cena i okres:</strong> subskrypcja miesięczna. Cenę w Twojej walucie pokazuje sklep przed zakupem (w Polsce w chwili publikacji regulaminu 12,99 zł miesięcznie).</li>
+      <li><strong style="color:var(--ink);font-weight:500">Płatność:</strong> pobiera App Store albo Google Play z konta użytkownika sklepu po potwierdzeniu zakupu.</li>
+      <li><strong style="color:var(--ink);font-weight:500">Automatyczne odnowienie:</strong> subskrypcja odnawia się co miesiąc, dopóki jej nie anulujesz. App Store wymaga anulowania najpóźniej 24 godziny przed końcem bieżącego okresu; Google Play — przed dniem odnowienia.</li>
+      <li><strong style="color:var(--ink);font-weight:500">Anulowanie:</strong> w ustawieniach sklepu — na iPhonie: Ustawienia → [Twoje imię] → Subskrypcje; na Androidzie: Google Play → Płatności i subskrypcje → Subskrypcje. Skrót „Zarządzaj subskrypcją” jest w aplikacji: Ustawienia → Kookie+. Odinstalowanie aplikacji nie anuluje subskrypcji.</li>
+      <li><strong style="color:var(--ink);font-weight:500">Po anulowaniu</strong> Kookie+ działa do końca opłaconego okresu.</li>
+      <li><strong style="color:var(--ink);font-weight:500">Zmiana ceny:</strong> o zmianie ceny subskrypcji powiadamia sklep zgodnie ze swoimi zasadami; tam, gdzie zasady sklepu tego wymagają, nowa cena obowiązuje dopiero po Twojej zgodzie.</li>
+    </ul>
+    <p>Aby chronić usługę przed nadużyciami, stosujemy techniczne limity liczby importów w krótkim czasie (np. w ciągu doby). Przy zwykłym korzystaniu z aplikacji nie powinny być odczuwalne.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">06</span> Przywracanie i przenoszenie zakupów</h2>
+    <p>Zakupy są przypisane do konta sklepu (Apple ID albo konta Google), na którym zostały dokonane — konto Kookie nie jest do nich potrzebne. Na nowym telefonie zaloguj się w sklepie tym samym kontem i w aplikacji wybierz Ustawienia → Kookie+ → „Przywróć zakup”.</p>
+    <p>App Store i Google Play to osobne systemy płatności, więc zakupu nie da się przenieść automatycznie między iPhonem a Androidem. Jeśli zmieniasz platformę, napisz do nas — pomożemy przenieść pozostały opłacony okres.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">07</span> Gdy subskrypcja wygaśnie</h2>
+    <p>Wygaśnięcie albo anulowanie subskrypcji nie zabiera żadnych danych. Przepisy (także zaimportowane), plan posiłków, lista zakupów, rodzina i kupione pakiety importów zostają. Funkcje Kookie+ przestają być dostępne do czasu ponownego zakupu.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">08</span> Zwroty i prawa konsumenta</h2>
+    <p>Płatności obsługuje sklep, w którym dokonano zakupu, dlatego prośby o zwrot składa się w sklepie: dla App Store na stronie <a class="back" href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, dla Google Play w historii zamówień konta Google. Sklep rozpatruje je według swoich zasad.</p>
+    <p>Regulamin nie wyłącza ani nie ogranicza praw, które przysługują Ci jako konsumentowi na podstawie przepisów prawa, w tym przepisów kraju Twojego zamieszkania.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">09</span> Zasady korzystania</h2>
+    <ul>
+      <li>Importujesz tylko treści, do których korzystania masz prawo, na własny, niekomercyjny użytek.</li>
+      <li>Nie wolno obchodzić limitów i zabezpieczeń, automatyzować importów ani odsprzedawać dostępu do funkcji aplikacji.</li>
+      <li>Przy rażącym naruszeniu tych zasad możemy ograniczyć dostęp do funkcji importu. Dane zapisane w aplikacji nie zostaną przez to usunięte.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="section-num">10</span> Odpowiedzialność</h2>
+    <p>Import przepisów i szacowanie kalorii korzystają z automatycznej analizy tekstu i obrazu. Wyniki mogą zawierać błędy — sprawdź przepis przed użyciem. Informacje o kaloriach i wartościach odżywczych są orientacyjne i nie stanowią porady medycznej ani dietetycznej.</p>
+    <p>Dokładamy starań, by aplikacja działała bez przerw, ale funkcje wymagające internetu mogą być czasowo niedostępne, np. z powodu prac technicznych albo awarii dostawców usług.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">11</span> Reklamacje i kontakt</h2>
+    <p>Problemy z aplikacją lub zakupem zgłoś w aplikacji (Ustawienia → „Zgłoś problem”) albo e-mailem na <a class="back" href="mailto:hello.kookielabs@gmail.com">hello.kookielabs@gmail.com</a>. Odpowiadamy w ciągu 14 dni. Sprawy płatności i zwrotów rozstrzyga sklep (punkt 08).</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">12</span> Zmiany regulaminu</h2>
+    <p>Regulamin może się zmienić, np. gdy pojawią się nowe funkcje albo zmienią się przepisy. Aktualna wersja jest zawsze na tej stronie, z datą u góry. O istotnych zmianach dotyczących płatnych funkcji poinformujemy w aplikacji. Prawem właściwym jest prawo polskie, z zastrzeżeniem praw konsumenta opisanych w punkcie 08.</p>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Kookie — Łukasz Chochel</span>
+  <span><a class="back" href="mailto:hello.kookielabs@gmail.com">hello.kookielabs@gmail.com</a></span>
+</footer>
+
+</body>
+</html>
