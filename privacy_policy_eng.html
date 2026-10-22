@@ -54,6 +54,16 @@
       text-decoration: none;
     }
 
+    .lang-switch {
+      font-size: 13px;
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .lang-switch:hover { text-decoration: underline; }
+
     .wordmark-icon {
       width: 36px;
       height: 36px;
@@ -74,16 +84,6 @@
       color: var(--ink);
       letter-spacing: -0.3px;
     }
-
-    .lang-switch {
-      font-size: 13px;
-      color: var(--teal);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-    }
-
-    .lang-switch:hover { text-decoration: underline; }
 
     h1 {
       font-family: 'DM Serif Display', serif;
@@ -402,118 +402,197 @@
   </div>
 
   <h1>Privacy<br><em>Policy</em></h1>
-  <p class="meta">Effective May 27, 2026</p>
+  <p class="meta">Effective October 22, 2026</p>
 </header>
 
 <main>
 
   <div class="intro-box">
-    <strong>Summary:</strong> Almost all data stays exclusively on your device. Only the URL recipe import feature sends page content to external services — and only when you explicitly trigger it. The app also collects anonymous usage analytics via PostHog (EU servers); you can opt out in Settings. We do not collect personal data, display ads, or sell any data.
+    <strong>In short:</strong> Your data stays on your device unless you deliberately create an account — then a copy is stored in the cloud so it works across your devices and in your family. The app shows no ads and does not sell data. You can turn analytics off in Settings.
   </div>
 
   <!-- 1 -->
   <section>
-    <h2><span class="section-num">01</span> General Information</h2>
-    <p>Kookie is a meal planning app for iOS, developed by Łukasz Chochel. This policy explains what data is processed when you use the app and for what purpose.</p>
-    <p>The developer does not display ads, does not sell user data, and does not share it with third parties for marketing purposes.</p>
+    <h2><span class="section-num">01</span> General information</h2>
+    <p>Kookie is a meal planning app for iOS and Android, created by Łukasz Chochel. This policy explains what data is processed when you use the app and for what purpose.</p>
+    <p>The developer does not show ads, does not sell user data and does not share it with third parties for marketing purposes.</p>
   </section>
 
   <!-- 2 -->
   <section>
-    <h2><span class="section-num">02</span> Data Stored Locally</h2>
-    <p>The app stores the following data exclusively on your device:</p>
+    <h2><span class="section-num">02</span> Data stored locally</h2>
+    <p>The app stores the following data only on the user's device:</p>
     <ul>
       <li>recipes (name, ingredients, instructions, photos)</li>
       <li>weekly meal plan</li>
-      <li>shopping list and checked item state</li>
+      <li>shopping list and the checked state of its items</li>
       <li>ingredient dictionary</li>
       <li>app settings (theme, first day of the week)</li>
-      <li>tutorial state</li>
+      <li>tutorial progress</li>
     </ul>
-    <p>This data is never sent to external servers, is not synced to the cloud, and is not shared with third parties. Deleting the app permanently removes all data from your device.</p>
-    <p>The app may send local push notifications to your device, informing you about planned meals and your shopping list. Notifications are generated solely on your device based on locally stored data. No data is transmitted to external servers in connection with notifications. You can manage notification permissions in the app Settings and in iOS system settings.</p>
+    <p>Without an account, data stays on the device and is not synced to the cloud. Deleting the app removes the local copy of the data from the device.</p>
+    <p>The app may send local notifications to your device about planned meals and your shopping list. Notifications are generated entirely on the device from locally stored data. No data is sent to external servers in connection with notifications. You can manage notification permission in the app's Settings and in your phone's system settings.</p>
   </section>
 
   <!-- 3 -->
   <section>
-    <h2><span class="section-num">03</span> Recipe Import from URL</h2>
-    <p>The URL recipe import feature is the only place where data leaves your device. Processing occurs only when you explicitly initiate the import by pasting a URL.</p>
+    <h2><span class="section-num">03</span> Account, cloud and family</h2>
+    <p>An account is optional. When you sign in with Google (iOS or Android) or Apple (iOS only), Kookie stores in Supabase your email address, the account identifier from the sign-in provider and — if the provider shares it — your display name.</p>
+    <p>The cloud receives the copy of data needed for the account to work: recipes, ingredients, meal plan, shopping list and its state, planning-related settings, and private notes and ratings. A random installation identifier is used to safely reconcile changes between devices and to count the import limit (section 04), not for advertising or tracking outside Kookie. It is stored in the cloud copy of your data, so other family members can see it too.</p>
+    <p>If you join a family, its members see and jointly edit the family's data, such as recipes, the plan and the shopping list. Each member keeps their own account and private data.</p>
 
-    <h3>What is transmitted</h3>
+    <h3>Where data is stored</h3>
+    <div class="processor">
+      <div class="processor-name">Supabase — account and cloud copy of data</div>
+      <p>Operator: Supabase Inc., USA. Kookie data is stored in the EU region (Frankfurt, Germany). Access to account and family data is limited to the signed-in user and members of their family.</p>
+      <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy →</a>
+    </div>
+
+    <h3>Deleting your account</h3>
+    <p>You can start account deletion in the app's Settings. Deleting the account erases that account's data from the cloud. The owner of an active family must first resolve the family so that other members' data is not deleted. If you cannot access the app, request account deletion via the <a href="usun-konto.html" style="color:var(--teal)">account deletion form</a>.</p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="section-num">04</span> Recipe import (link, photo, PDF)</h2>
+    <p>Recipe import sends data off the device only when the user pastes a URL, selects a photo or selects a PDF file.</p>
+
+    <h3>What is sent</h3>
     <ul>
-      <li>the URL you provide</li>
-      <li>the content of the webpage at that URL (recipe text)</li>
+      <li>the URL provided by the user</li>
+      <li>the content of the web page at that address (the recipe text)</li>
+      <li>for photo import — the selected recipe photos</li>
+      <li>for PDF import — the text extracted from the selected file</li>
     </ul>
-    <p>The app does not transmit any personal data: no name, email, location, or device identifiers.</p>
+    <p>The app does not send your name, email or location. Together with the URL it sends a random Kookie installation identifier — see “Import limit” below for what it is and why.</p>
 
     <h3>How processing works</h3>
     <ul>
       <li>The app sends the URL to an intermediary server.</li>
-      <li>The server fetches the page content directly from the website owner.</li>
+      <li>The server fetches the page content directly from its owner.</li>
       <li>The content is passed to the Claude API (Anthropic) to extract the recipe data.</li>
-      <li>The parsed recipe is returned to the app and saved locally on your device.</li>
+      <li>The parsed recipe is returned to the app and saved locally on the device.</li>
     </ul>
+    <p>Photo and PDF import work the same way: the photos or the file text go through the intermediary server to the Claude API, and the result returns to the app. The server does not store photos, files or their content.</p>
 
     <h3>Data processors</h3>
 
     <div class="processor">
       <div class="processor-name">Supabase — intermediary server infrastructure</div>
-      <p>Operator: Supabase Inc., USA. This app's server region: EU (Frankfurt, Germany).</p>
-      <p>What is logged: only technical metadata — timestamp, HTTP status, execution time, headers. The URL content and Claude's response are neither logged nor stored by Supabase.</p>
-      <p>Technical metadata is retained for 1 day, after which it is automatically deleted.</p>
+      <p>Operator: Supabase Inc., USA. This app's server: EU region (Frankfurt, Germany).</p>
+      <p>What is logged: technical metadata only — timestamp, HTTP status, execution time, headers. Neither the URL nor the response from Claude is logged or stored by Supabase.</p>
+      <p>Technical metadata is kept for 1 day and then deleted automatically.</p>
       <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy →</a>
     </div>
 
     <div class="processor">
-      <div class="processor-name">Anthropic — text processing via the Claude model</div>
-      <p>Operator: Anthropic PBC, USA / Anthropic Ireland Limited, Ireland (for EEA users).</p>
-      <p>What is processed: the content of the webpage containing the recipe.</p>
-      <p>Page content submitted for processing is automatically deleted by Anthropic within 30 days. Under Anthropic's Commercial Terms of Service, data submitted via the API is not used to train AI models.</p>
+      <div class="processor-name">Anthropic — text processing by the Claude model</div>
+      <p>Operator: Anthropic PBC, USA / Anthropic Ireland Limited, Ireland (for users in the EEA).</p>
+      <p>What is processed: the content of the web page containing the recipe, and for photo or PDF import — the photos or the file text.</p>
+      <p>Content submitted for processing is automatically deleted by Anthropic within 30 days. Under Anthropic's Commercial Terms of Service, data sent through the API is not used to train AI models.</p>
       <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy →</a>
     </div>
 
-    <h3>Import limit</h3>
-    <p>The app locally tracks the number of URL imports to enforce the free import limit. The counter is stored exclusively on your device.</p>
+    <h3>Import limit and abuse protection</h3>
+    <p>The number of free imports is limited. To enforce this limit and to prevent mass misuse of the service, the app sends a random Kookie installation identifier with each import. It is an identifier assigned by the app — not a phone number, not an advertising identifier and not a hardware identifier.</p>
+    <p>The server does not store the identifier itself, only its one-way hash, from which the identifier cannot be recovered. Each import creates an entry: identifier hash, import type, number of recipes, app version and time. The URL and recipe content are not part of this entry.</p>
+    <p>Entries are kept indefinitely because the limit counter depends on them. If you are signed in, the entry is also linked to your account. After account deletion the entries remain but lose the link to the account.</p>
+    <p>The installation identifier is also part of the cloud copy of your data (section 03), so other family members can see it.</p>
   </section>
 
-  <!-- 4 -->
+  <!-- 5 -->
   <section>
-    <h2><span class="section-num">04</span> Analytics</h2>
-    <p>The app collects anonymous usage data to understand how the app is used and to improve it. No personal data, recipe content, or device identifiers are collected.</p>
+    <h2><span class="section-num">05</span> Ingredient nutrition data</h2>
+    <p>When Kookie looks up nutrition data for an ingredient, the ingredient name may be sent to the server. The result is used to complete information in the app. Your email address, library content and account data are not sent.</p>
+    <p>To protect the service from abuse, the server processes a one-way hash of the IP address. The IP address itself is not stored.</p>
+    <div class="processor">
+      <div class="processor-name">USDA FoodData Central and Anthropic</div>
+      <p>The ingredient name may be passed to the public USDA database and to Anthropic to find and select the right nutrition data.</p>
+    </div>
+  </section>
 
-    <h3>What is collected</h3>
+  <!-- 6 -->
+  <section>
+    <h2><span class="section-num">06</span> Analytics</h2>
+    <p>The app collects usage data to understand how it is used and to improve it. No personal data, recipe content or device identifiers are collected.</p>
+
+    <h3>What is collected (among others)</h3>
     <ul>
       <li>app launch</li>
       <li>adding a meal to the weekly plan (meal type only — no recipe content)</li>
       <li>opening the shopping list</li>
-      <li>checking a shopping list item</li>
-      <li>importing a recipe from URL</li>
+      <li>checking an item on the shopping list</li>
+      <li>importing a recipe from a URL</li>
       <li>creating a recipe manually</li>
     </ul>
-    <p>Events are identified by a randomly generated pseudonymous ID (UUID v4) that is not linked to your identity or device and is permanently deleted when you uninstall the app.</p>
+    <p>Events are identified by a randomly generated pseudonymous identifier (UUID v4), which is not linked to your identity or device and is permanently removed when the app is uninstalled.</p>
 
     <h3>Data processor</h3>
     <div class="processor">
       <div class="processor-name">PostHog — product analytics</div>
       <p>Operator: PostHog Inc., USA. Server region used by this app: EU Cloud (Frankfurt, Germany).</p>
-      <p>Data is processed exclusively on EU servers.</p>
+      <p>Data is processed only on servers in the EU.</p>
       <a href="https://posthog.com/privacy" target="_blank" rel="noopener">PostHog Privacy Policy →</a>
     </div>
 
-    <h3>Opt-out</h3>
-    <p>You can disable analytics at any time in the app: <strong>Settings → Privacy → Anonymous analytics</strong>. The setting takes effect immediately.</p>
+    <h3>Opting out</h3>
+    <p>You can turn analytics off at any time in the app: <strong>Settings → Privacy → Anonymous analytics</strong>. The setting takes effect immediately.</p>
   </section>
 
-  <!-- 5 -->
+  <!-- 7 -->
   <section>
-    <h2><span class="section-num">05</span> What We Don't Collect</h2>
+    <h2><span class="section-num">07</span> In-app purchases (Kookie+)</h2>
+    <p>You buy import packs and the Kookie+ subscription (renewed monthly) through the App Store (Apple) or Google Play. Payment, renewals and cancellation are handled by the store — Kookie does not see card or payer details.</p>
+    <p>The subscription is tied to your App Store or Google Play account and to the phone it was bought on, not to a Kookie account. A Kookie account is not needed to buy. On another device with the same store account you can transfer the subscription with the “Restore purchase” button.</p>
+
+    <h3>What is processed</h3>
+    <ul>
+      <li>a random purchase identifier assigned by Kookie (not an email, not an advertising identifier, not a hardware identifier)</li>
+      <li>transaction data from the store: product, price, currency, date, transaction identifier, store country</li>
+      <li>the balance of purchased imports and their use</li>
+      <li>Kookie+ subscription status: whether it is active, until when, whether it renews, and store events (purchase, renewal, cancellation, expiry, refund)</li>
+      <li>if you are signed in — the link between the balance and your account</li>
+    </ul>
+    <p>Purchase, balance and subscription data is kept while the balance or subscription is active, and for the period required by tax and accounting law. After account deletion, purchases remain with the purchase identifier but lose the link to the account.</p>
+
+    <h3>Data processors</h3>
+    <div class="processor">
+      <div class="processor-name">RevenueCat — confirming and restoring purchases</div>
+      <p>Operator: RevenueCat, Inc., USA. Receives the purchase identifier, transaction data from the store and basic technical data needed for the service to work (system, app version, IP address).</p>
+      <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy →</a>
+    </div>
+    <div class="processor">
+      <div class="processor-name">Supabase — balance and purchase status</div>
+      <p>Operator: Supabase Inc., USA. Data stored in the EU region (Frankfurt, Germany).</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="section-num">08</span> Reporting a problem</h2>
+    <p>In Settings you can send a problem report, e.g. about a purchase or an import. The report contains:</p>
+    <ul>
+      <li>the category and text of the report</li>
+      <li>an email address for the reply and an order number — only if you provide them</li>
+      <li>diagnostic data: app version, system, purchase identifier, list of transactions and import limit status</li>
+      <li>a one-way hash of the installation identifier and — if you are signed in — the account identifier</li>
+    </ul>
+    <p>The report is saved in Supabase (EU region) and emailed to the developer via Brevo (Sendinblue SAS, France). It is used only to handle the report, e.g. to check or transfer a purchase. Reports are automatically deleted from the database after 12 months.</p>
+    <div class="processor">
+      <div class="processor-name">Brevo — sending the report to the developer</div>
+      <p>Operator: Sendinblue SAS (Brevo), France. Data processed in the EU.</p>
+      <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo Privacy Policy →</a>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="section-num">09</span> What we do not collect</h2>
     <p>The app does not collect or process:</p>
     <div class="no-collect">
-      <span class="tag">name</span>
-      <span class="tag">email address</span>
+      <span class="tag">first and last name</span>
       <span class="tag">phone number</span>
       <span class="tag">location</span>
-      <span class="tag">device identifiers</span>
       <span class="tag">advertising identifiers</span>
       <span class="tag">health data</span>
       <span class="tag">biometric data</span>
@@ -522,9 +601,9 @@
     </div>
   </section>
 
-  <!-- 6 -->
+  <!-- 10 -->
   <section>
-    <h2><span class="section-num">06</span> Legal Basis (GDPR)</h2>
+    <h2><span class="section-num">10</span> Legal basis (GDPR)</h2>
     <p>For users in the European Economic Area:</p>
     <div class="table-wrap">
       <table>
@@ -537,15 +616,35 @@
         <tbody>
           <tr>
             <td>Storing data locally on the device</td>
-            <td>Performance of a contract (Art. 6(1)(b) GDPR) — data necessary for the app to function</td>
+            <td>Performance of a contract (Art. 6(1)(b) GDPR) — data necessary for the app to work</td>
           </tr>
           <tr>
-            <td>Transmitting the URL and page content during recipe import</td>
-            <td>Performance of a contract (Art. 6(1)(b) GDPR) — feature intentionally initiated by the user</td>
+            <td>Sending the URL and page content, photos or PDF text when importing a recipe</td>
+            <td>Performance of a contract (Art. 6(1)(b) GDPR) — a feature deliberately started by the user</td>
+          </tr>
+          <tr>
+            <td>Installation identifier hash on import — free import limit and abuse protection</td>
+            <td>Legitimate interest (Art. 6(1)(f) GDPR) — protecting the service from abuse and enforcing the limit</td>
+          </tr>
+          <tr>
+            <td>Account, cloud copy and family</td>
+            <td>Performance of a contract (Art. 6(1)(b) GDPR) — a feature enabled after creating an account</td>
+          </tr>
+          <tr>
+            <td>Looking up ingredient nutrition data</td>
+            <td>Performance of a contract (Art. 6(1)(b) GDPR) — a feature started by the user in the app</td>
+          </tr>
+          <tr>
+            <td>Handling in-app purchases, the Kookie+ subscription, import balance and purchase restoration (RevenueCat, Supabase)</td>
+            <td>Performance of a contract (Art. 6(1)(b) GDPR); retention of transaction data — legal obligation (Art. 6(1)(c) GDPR)</td>
+          </tr>
+          <tr>
+            <td>Handling a problem report</td>
+            <td>Legitimate interest (Art. 6(1)(f) GDPR) — handling reports and purchase complaints</td>
           </tr>
           <tr>
             <td>Collecting anonymous analytics events via PostHog</td>
-            <td>Consent (Art. 6(1)(a) GDPR) — the user gives consent during onboarding; can be withdrawn in Settings → Privacy</td>
+            <td>Consent (Art. 6(1)(a) GDPR) — given by the user during onboarding; can be withdrawn in Settings → Privacy</td>
           </tr>
         </tbody>
       </table>
@@ -553,53 +652,53 @@
     <p>Data is not used for automated decision-making or profiling.</p>
   </section>
 
-  <!-- 7 -->
-  <section>
-    <h2><span class="section-num">07</span> International Data Transfers</h2>
-    <p>Data processed during recipe import and anonymous analytics events may be transferred to the USA, where Supabase Inc., Anthropic PBC, and PostHog Inc. are headquartered. Transfers are made on the basis of Standard Contractual Clauses (SCCs) approved by the European Commission or other appropriate safeguards in compliance with GDPR.</p>
-    <p>The server infrastructure used by this app (Supabase and PostHog) is located in the EU region (Frankfurt, Germany).</p>
-    <p>Processing by Anthropic is carried out under SCCs via Anthropic Ireland Limited (EEA).</p>
-  </section>
-
-  <!-- 8 -->
-  <section>
-    <h2><span class="section-num">08</span> Your Rights</h2>
-    <p>EEA users have the following rights under GDPR:</p>
-    <div class="rights-grid">
-      <div class="right-item"><strong>Access</strong><span>to your personal data</span></div>
-      <div class="right-item"><strong>Rectification</strong><span>of inaccurate data</span></div>
-      <div class="right-item"><strong>Erasure</strong><span>"right to be forgotten"</span></div>
-      <div class="right-item"><strong>Restriction</strong><span>of processing</span></div>
-      <div class="right-item"><strong>Portability</strong><span>of data to another controller</span></div>
-      <div class="right-item"><strong>Objection</strong><span>to processing</span></div>
-    </div>
-    <p>Since the app does not store user data on the developer's servers, most requests can be fulfilled directly by deleting data from your device or uninstalling the app.</p>
-    <p>Users have the right to lodge a complaint with a supervisory authority. In Poland, this is the <strong>President of the Personal Data Protection Office (UODO)</strong>, ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" style="color:var(--teal)">uodo.gov.pl</a>.</p>
-  </section>
-
-  <!-- 9 -->
-  <section>
-    <h2><span class="section-num">09</span> Security</h2>
-    <p>All communication between the app and the intermediary server takes place exclusively over an encrypted HTTPS connection. The developer applies appropriate technical and organizational measures to protect the data being processed.</p>
-  </section>
-
-  <!-- 10 -->
-  <section>
-    <h2><span class="section-num">10</span> Children</h2>
-    <p>The app is not directed at children under the age of 13 and the developer does not knowingly collect data from children in that age group.</p>
-  </section>
-
   <!-- 11 -->
   <section>
-    <h2><span class="section-num">11</span> Policy Changes</h2>
-    <p>The developer will notify users of material changes to this policy — in particular those concerning the scope of data processed or new data processors — by releasing an app update on the App Store. Changes will take effect on the date indicated in this document. For changes affecting consent-based processing (analytics), continued use of the analytics feature will require renewed consent in Settings → Privacy.</p>
+    <h2><span class="section-num">11</span> Transfers outside the EEA</h2>
+    <p>Account data, recipe import data, purchase data, nutrition lookups and anonymous analytics events may be processed by entities based in the USA: Supabase Inc., Anthropic PBC, USDA, PostHog Inc. and RevenueCat, Inc. Transfers take place on the basis of standard contractual clauses (SCC) approved by the European Commission or other appropriate safeguards compliant with the GDPR.</p>
+    <p>The server infrastructure used by this app (Supabase and PostHog) is located in the EU region (Frankfurt, Germany).</p>
+    <p>Processing by Anthropic takes place under SCC through Anthropic Ireland Limited (EEA). RevenueCat processes data under a data processing agreement with SCC. Brevo processes data in the EU.</p>
   </section>
 
   <!-- 12 -->
   <section>
-    <h2><span class="section-num">12</span> Contact</h2>
+    <h2><span class="section-num">12</span> Your rights</h2>
+    <p>Users in the EEA have the following rights under the GDPR:</p>
+    <div class="rights-grid">
+      <div class="right-item"><strong>Access</strong><span>to personal data</span></div>
+      <div class="right-item"><strong>Rectification</strong><span>of inaccurate data</span></div>
+      <div class="right-item"><strong>Erasure</strong><span>“right to be forgotten”</span></div>
+      <div class="right-item"><strong>Restriction</strong><span>of processing</span></div>
+      <div class="right-item"><strong>Portability</strong><span>of data to another controller</span></div>
+      <div class="right-item"><strong>Objection</strong><span>to processing</span></div>
+    </div>
+    <p>You can delete local data by deleting the app. You can delete your account and cloud data from within the app or via the <a href="usun-konto.html" style="color:var(--teal)">account deletion form</a>.</p>
+    <p>Users have the right to lodge a complaint with a supervisory authority. In Poland this is the <strong>President of the Personal Data Protection Office (UODO)</strong>, ul. Stawki 2, 00-193 Warsaw, <a href="https://uodo.gov.pl" style="color:var(--teal)">uodo.gov.pl</a>.</p>
+  </section>
+
+  <!-- 13 -->
+  <section>
+    <h2><span class="section-num">13</span> Security</h2>
+    <p>Communication between the app and the intermediary server takes place only over an encrypted HTTPS connection. The developer applies appropriate technical and organisational measures to protect the data processed.</p>
+  </section>
+
+  <!-- 14 -->
+  <section>
+    <h2><span class="section-num">14</span> Children</h2>
+    <p>The app is not directed at children under 13 and the developer does not knowingly collect data from children of that age.</p>
+  </section>
+
+  <!-- 15 -->
+  <section>
+    <h2><span class="section-num">15</span> Changes to this policy</h2>
+    <p>The developer will announce material changes to this policy by updating this page and, where needed, the app. A change takes effect on the date stated in the document. Changes concerning consent-based analytics require renewed consent in Settings → Privacy.</p>
+  </section>
+
+  <!-- 16 -->
+  <section>
+    <h2><span class="section-num">16</span> Contact</h2>
     <div class="contact-box">
-      <p><strong style="color:var(--ink)">Łukasz Chochel</strong><br>Developer of Kookie</p>
+      <p><strong style="color:var(--ink)">Łukasz Chochel</strong><br>Developer of the Kookie app</p>
       <br>
       <p>📧 <a href="mailto:hello.kookielabs@gmail.com">hello.kookielabs@gmail.com</a></p>
     </div>
@@ -609,7 +708,7 @@
 
 <footer>
   <span>© 2026 Kookie — Łukasz Chochel</span>
-  <span>Effective May 27, 2026</span>
+  <span>Effective October 22, 2026</span>
 </footer>
 
 </body>

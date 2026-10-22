@@ -398,10 +398,11 @@
       <div class="wordmark-icon">🍽️</div>
       <span class="wordmark-text">Kookie</span>
     </div>
+    <a href="privacy_policy_eng.html" class="lang-switch">🇬🇧 English</a>
   </div>
 
   <h1>Polityka<br><em>prywatności</em></h1>
-  <p class="meta">Obowiązuje od 7 października 2026</p>
+  <p class="meta">Obowiązuje od 22 października 2026</p>
 </header>
 
 <main>
@@ -430,7 +431,7 @@
       <li>stan samouczka</li>
     </ul>
     <p>Bez konta dane pozostają na urządzeniu i nie są synchronizowane z chmurą. Usunięcie aplikacji usuwa lokalną kopię danych z urządzenia.</p>
-    <p>Aplikacja może wysyłać lokalne powiadomienia push na Twoje urządzenie, informując o zaplanowanych posiłkach i liście zakupów. Powiadomienia są generowane wyłącznie na urządzeniu na podstawie danych zapisanych lokalnie. Żadne dane nie są przesyłane do zewnętrznych serwerów w związku z powiadomieniami. Możesz zarządzać zgodą na powiadomienia w Ustawieniach aplikacji oraz w systemowych ustawieniach iOS.</p>
+    <p>Aplikacja może wysyłać lokalne powiadomienia push na Twoje urządzenie, informując o zaplanowanych posiłkach i liście zakupów. Powiadomienia są generowane wyłącznie na urządzeniu na podstawie danych zapisanych lokalnie. Żadne dane nie są przesyłane do zewnętrznych serwerów w związku z powiadomieniami. Możesz zarządzać zgodą na powiadomienia w Ustawieniach aplikacji oraz w systemowych ustawieniach telefonu.</p>
   </section>
 
   <!-- 3 -->
@@ -453,13 +454,15 @@
 
   <!-- 4 -->
   <section>
-    <h2><span class="section-num">04</span> Import przepisu z adresu URL</h2>
-    <p>Import przepisu z URL wysyła dane poza urządzenie wyłącznie wtedy, gdy użytkownik samodzielnie wklei adres URL.</p>
+    <h2><span class="section-num">04</span> Import przepisu (link, zdjęcie, PDF)</h2>
+    <p>Import przepisu wysyła dane poza urządzenie wyłącznie wtedy, gdy użytkownik samodzielnie wklei adres URL, wybierze zdjęcie albo plik PDF.</p>
 
     <h3>Co jest przesyłane</h3>
     <ul>
       <li>adres URL podany przez użytkownika</li>
       <li>treść strony internetowej pod tym adresem (tekst przepisu)</li>
+      <li>przy imporcie ze zdjęcia — wybrane zdjęcia przepisu</li>
+      <li>przy imporcie z PDF — tekst wyodrębniony z wybranego pliku</li>
     </ul>
     <p>Aplikacja nie przesyła imienia, nazwiska, e-maila ani lokalizacji. Razem z adresem URL wysyła losowy identyfikator instalacji Kookie — opis i cel niżej, w części „Limit importów”.</p>
 
@@ -470,6 +473,7 @@
       <li>Treść jest przekazywana do Claude API (Anthropic) w celu wyodrębnienia danych przepisu.</li>
       <li>Sparsowany przepis jest zwracany do aplikacji i zapisywany lokalnie na urządzeniu.</li>
     </ul>
+    <p>Import ze zdjęcia i z PDF przebiega tak samo: zdjęcia albo tekst pliku trafiają przez serwer pośredniczący do Claude API, a wynik wraca do aplikacji. Serwer nie zapisuje zdjęć, plików ani ich treści.</p>
 
     <h3>Podmioty przetwarzające dane</h3>
 
@@ -484,8 +488,8 @@
     <div class="processor">
       <div class="processor-name">Anthropic — przetwarzanie tekstu przez model Claude</div>
       <p>Operator: Anthropic PBC, USA / Anthropic Ireland Limited, Irlandia (dla użytkowników z EOG).</p>
-      <p>Co jest przetwarzane: treść strony internetowej zawierającej przepis.</p>
-      <p>Treść strony przesłana do przetworzenia jest automatycznie usuwana przez Anthropic w ciągu 30 dni. Zgodnie z Commercial Terms of Service Anthropic, dane przesyłane przez API nie są wykorzystywane do trenowania modeli AI.</p>
+      <p>Co jest przetwarzane: treść strony internetowej zawierającej przepis, a przy imporcie ze zdjęcia lub PDF — zdjęcia albo tekst pliku.</p>
+      <p>Treść przesłana do przetworzenia jest automatycznie usuwana przez Anthropic w ciągu 30 dni. Zgodnie z Commercial Terms of Service Anthropic, dane przesyłane przez API nie są wykorzystywane do trenowania modeli AI.</p>
       <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Polityka prywatności Anthropic →</a>
     </div>
 
@@ -512,7 +516,7 @@
     <h2><span class="section-num">06</span> Analityka</h2>
     <p>Aplikacja zbiera dane o sposobie używania, aby zrozumieć jak jest używana i ją ulepszać. Nie są zbierane żadne dane osobowe, treści przepisów ani identyfikatory urządzenia.</p>
 
-    <h3>Co jest zbierane</h3>
+    <h3>Co jest zbierane (między innymi)</h3>
     <ul>
       <li>uruchomienie aplikacji</li>
       <li>dodanie posiłku do planu tygodniowego (tylko typ posiłku — bez treści przepisu)</li>
@@ -537,7 +541,53 @@
 
   <!-- 7 -->
   <section>
-    <h2><span class="section-num">07</span> Czego nie zbieramy</h2>
+    <h2><span class="section-num">07</span> Zakupy w aplikacji (Kookie+)</h2>
+    <p>Pakiety importów i subskrypcję Kookie+ (odnawianą co miesiąc) kupujesz przez App Store (Apple) albo Google Play. Płatność, odnowienia i anulowanie subskrypcji obsługuje sklep — Kookie nie widzi danych karty ani danych płatnika.</p>
+    <p>Subskrypcja jest powiązana z kontem App Store lub Google Play i z telefonem, na którym ją kupiono, nie z kontem Kookie. Konto Kookie nie jest do zakupu potrzebne. Na innym urządzeniu z tym samym kontem sklepu przeniesiesz subskrypcję przyciskiem „Przywróć zakup”.</p>
+
+    <h3>Co jest przetwarzane</h3>
+    <ul>
+      <li>losowy identyfikator zakupów nadany przez Kookie (nie e-mail, nie identyfikator reklamowy, nie identyfikator sprzętu)</li>
+      <li>dane transakcji ze sklepu: produkt, cena, waluta, data, identyfikator transakcji, kraj sklepu</li>
+      <li>saldo kupionych importów i ich wykorzystanie</li>
+      <li>stan subskrypcji Kookie+: czy jest aktywna, do kiedy, czy się odnawia, oraz zdarzenia ze sklepu (zakup, odnowienie, anulowanie, wygaśnięcie, zwrot)</li>
+      <li>jeśli jesteś zalogowany — powiązanie salda z Twoim kontem</li>
+    </ul>
+    <p>Dane zakupów, salda i subskrypcji są przechowywane, dopóki działa saldo lub subskrypcja, oraz przez okres wymagany przepisami podatkowymi i rachunkowymi. Po usunięciu konta zakupy zostają przy identyfikatorze zakupów, ale tracą powiązanie z kontem.</p>
+
+    <h3>Podmioty przetwarzające dane</h3>
+    <div class="processor">
+      <div class="processor-name">RevenueCat — potwierdzanie i przywracanie zakupów</div>
+      <p>Operator: RevenueCat, Inc., USA. Otrzymuje identyfikator zakupów, dane transakcji ze sklepu oraz podstawowe dane techniczne potrzebne do działania usługi (system, wersja aplikacji, adres IP).</p>
+      <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Polityka prywatności RevenueCat →</a>
+    </div>
+    <div class="processor">
+      <div class="processor-name">Supabase — saldo i stan zakupów</div>
+      <p>Operator: Supabase Inc., USA. Dane przechowywane w regionie EU (Frankfurt, Niemcy).</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="section-num">08</span> Zgłoszenie problemu</h2>
+    <p>W Ustawieniach możesz wysłać zgłoszenie problemu, np. z zakupem albo importem. Zgłoszenie zawiera:</p>
+    <ul>
+      <li>kategorię i treść zgłoszenia</li>
+      <li>adres e-mail do odpowiedzi i numer zamówienia — tylko jeśli je podasz</li>
+      <li>dane diagnostyczne: wersję aplikacji, system, identyfikator zakupów, listę transakcji i stan limitu importów</li>
+      <li>jednokierunkowy skrót identyfikatora instalacji oraz — jeśli jesteś zalogowany — identyfikator konta</li>
+    </ul>
+    <p>Zgłoszenie jest zapisywane w Supabase (region EU) i wysyłane e-mailem do dewelopera przez Brevo (Sendinblue SAS, Francja). Służy wyłącznie do rozpatrzenia zgłoszenia, np. sprawdzenia lub przeniesienia zakupu. Zgłoszenia są automatycznie usuwane z bazy po 12 miesiącach.</p>
+    <div class="processor">
+      <div class="processor-name">Brevo — wysyłka zgłoszenia do dewelopera</div>
+      <p>Operator: Sendinblue SAS (Brevo), Francja. Dane przetwarzane w UE.</p>
+      <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Polityka prywatności Brevo →</a>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="section-num">09</span> Czego nie zbieramy</h2>
     <p>Aplikacja nie zbiera ani nie przetwarza:</p>
     <div class="no-collect">
       <span class="tag">imię i nazwisko</span>
@@ -551,9 +601,9 @@
     </div>
   </section>
 
-  <!-- 8 -->
+  <!-- 10 -->
   <section>
-    <h2><span class="section-num">08</span> Podstawa prawna (RODO)</h2>
+    <h2><span class="section-num">10</span> Podstawa prawna (RODO)</h2>
     <p>Dla użytkowników z Europejskiego Obszaru Gospodarczego:</p>
     <div class="table-wrap">
       <table>
@@ -569,7 +619,7 @@
             <td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) — dane niezbędne do działania aplikacji</td>
           </tr>
           <tr>
-            <td>Przesyłanie adresu URL i treści strony przy imporcie przepisu</td>
+            <td>Przesyłanie adresu URL i treści strony, zdjęć albo tekstu PDF przy imporcie przepisu</td>
             <td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) — funkcja inicjowana świadomie przez użytkownika</td>
           </tr>
           <tr>
@@ -585,6 +635,14 @@
             <td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO) — funkcja uruchamiana przez użytkownika w aplikacji</td>
           </tr>
           <tr>
+            <td>Obsługa zakupów w aplikacji, subskrypcji Kookie+, salda importów i przywracania zakupów (RevenueCat, Supabase)</td>
+            <td>Wykonanie umowy (art. 6 ust. 1 lit. b RODO); przechowywanie danych transakcji — obowiązek prawny (art. 6 ust. 1 lit. c RODO)</td>
+          </tr>
+          <tr>
+            <td>Rozpatrzenie zgłoszenia problemu</td>
+            <td>Prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO) — obsługa zgłoszeń i reklamacji zakupów</td>
+          </tr>
+          <tr>
             <td>Zbieranie anonimowych zdarzeń analitycznych przez PostHog</td>
             <td>Zgoda (art. 6 ust. 1 lit. a RODO) — użytkownik wyraża zgodę podczas onboardingu; możliwe odwołanie w Ustawieniach → Prywatność</td>
           </tr>
@@ -594,17 +652,17 @@
     <p>Dane nie są wykorzystywane do zautomatyzowanego podejmowania decyzji ani profilowania.</p>
   </section>
 
-  <!-- 9 -->
+  <!-- 11 -->
   <section>
-    <h2><span class="section-num">09</span> Przekazywanie danych poza EOG</h2>
-    <p>Dane konta, importu przepisu, sprawdzania danych odżywczych oraz anonimowe zdarzenia analityczne mogą być przetwarzane przez podmioty z siedzibą w USA: Supabase Inc., Anthropic PBC, USDA i PostHog Inc. Przekazanie odbywa się na podstawie standardowych klauzul umownych (SCC) zatwierdzonych przez Komisję Europejską lub innych odpowiednich zabezpieczeń zgodnych z RODO.</p>
+    <h2><span class="section-num">11</span> Przekazywanie danych poza EOG</h2>
+    <p>Dane konta, importu przepisu, zakupów, sprawdzania danych odżywczych oraz anonimowe zdarzenia analityczne mogą być przetwarzane przez podmioty z siedzibą w USA: Supabase Inc., Anthropic PBC, USDA, PostHog Inc. i RevenueCat, Inc. Przekazanie odbywa się na podstawie standardowych klauzul umownych (SCC) zatwierdzonych przez Komisję Europejską lub innych odpowiednich zabezpieczeń zgodnych z RODO.</p>
     <p>Infrastruktura serwerowa używana przez tę aplikację (Supabase i PostHog) jest zlokalizowana w regionie EU (Frankfurt, Niemcy).</p>
-    <p>Przetwarzanie przez Anthropic odbywa się na podstawie SCC za pośrednictwem Anthropic Ireland Limited (EOG).</p>
+    <p>Przetwarzanie przez Anthropic odbywa się na podstawie SCC za pośrednictwem Anthropic Ireland Limited (EOG). RevenueCat przetwarza dane na podstawie umowy powierzenia z SCC. Brevo przetwarza dane w UE.</p>
   </section>
 
-  <!-- 10 -->
+  <!-- 12 -->
   <section>
-    <h2><span class="section-num">10</span> Twoje prawa</h2>
+    <h2><span class="section-num">12</span> Twoje prawa</h2>
     <p>Użytkownicy z EOG mają na podstawie RODO następujące prawa:</p>
     <div class="rights-grid">
       <div class="right-item"><strong>Dostęp</strong><span>do danych osobowych</span></div>
@@ -618,27 +676,27 @@
     <p>Użytkownicy mają prawo złożyć skargę do organu nadzorczego. W Polsce jest nim <strong>Prezes UODO</strong>, ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" style="color:var(--teal)">uodo.gov.pl</a>.</p>
   </section>
 
-  <!-- 11 -->
-  <section>
-    <h2><span class="section-num">11</span> Bezpieczeństwo</h2>
-    <p>Komunikacja między aplikacją a serwerem pośredniczącym odbywa się wyłącznie przez szyfrowane połączenie HTTPS. Deweloper stosuje odpowiednie środki techniczne i organizacyjne w celu ochrony przetwarzanych danych.</p>
-  </section>
-
-  <!-- 12 -->
-  <section>
-    <h2><span class="section-num">12</span> Dzieci</h2>
-    <p>Aplikacja nie jest skierowana do dzieci poniżej 13. roku życia i deweloper nie zbiera świadomie danych od dzieci w tym wieku.</p>
-  </section>
-
   <!-- 13 -->
   <section>
-    <h2><span class="section-num">13</span> Zmiany polityki</h2>
-    <p>O istotnych zmianach niniejszej polityki deweloper poinformuje przez aktualizację tej strony i, gdy to potrzebne, aplikacji. Zmiana wchodzi w życie z datą wskazaną w dokumencie. Zmiany dotyczące analityki opartej na zgodzie wymagają ponownego wyrażenia zgody w Ustawieniach → Prywatność.</p>
+    <h2><span class="section-num">13</span> Bezpieczeństwo</h2>
+    <p>Komunikacja między aplikacją a serwerem pośredniczącym odbywa się wyłącznie przez szyfrowane połączenie HTTPS. Deweloper stosuje odpowiednie środki techniczne i organizacyjne w celu ochrony przetwarzanych danych.</p>
   </section>
 
   <!-- 14 -->
   <section>
-    <h2><span class="section-num">14</span> Kontakt</h2>
+    <h2><span class="section-num">14</span> Dzieci</h2>
+    <p>Aplikacja nie jest skierowana do dzieci poniżej 13. roku życia i deweloper nie zbiera świadomie danych od dzieci w tym wieku.</p>
+  </section>
+
+  <!-- 15 -->
+  <section>
+    <h2><span class="section-num">15</span> Zmiany polityki</h2>
+    <p>O istotnych zmianach niniejszej polityki deweloper poinformuje przez aktualizację tej strony i, gdy to potrzebne, aplikacji. Zmiana wchodzi w życie z datą wskazaną w dokumencie. Zmiany dotyczące analityki opartej na zgodzie wymagają ponownego wyrażenia zgody w Ustawieniach → Prywatność.</p>
+  </section>
+
+  <!-- 16 -->
+  <section>
+    <h2><span class="section-num">16</span> Kontakt</h2>
     <div class="contact-box">
       <p><strong style="color:var(--ink)">Łukasz Chochel</strong><br>Deweloper aplikacji Kookie</p>
       <br>
@@ -650,7 +708,7 @@
 
 <footer>
   <span>© 2026 Kookie — Łukasz Chochel</span>
-  <span>Obowiązuje od 7 października 2026</span>
+  <span>Obowiązuje od 22 października 2026</span>
 </footer>
 
 </body>
